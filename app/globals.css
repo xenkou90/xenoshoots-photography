@@ -11,3 +11,15 @@
   --color-white: #ffffff;
   --color-brand: #545454;
 }
+
+@layer base {
+  /* Match the original site, which used the browser's default line height */
+  body {
+    line-height: normal;
+  }
+
+  /* Tailwind 4 gives buttons the default cursor; restore the pointer */
+  button:not(:disabled) {
+    cursor: pointer;
+  }
+}
