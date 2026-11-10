@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
+import Sidebar from "@/components/layout/Sidebar";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -40,7 +41,10 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-black text-white">{children}</body>
+      <body className="bg-black text-white">
+        <Sidebar />
+        {children}
+      </body>
     </html>
   );
 }
