@@ -57,7 +57,7 @@ Then open http://localhost:3000.
 ## Roadmap
 
 - [x] Project foundation: static export, fonts, color tokens, metadata, icons
-- [ ] Site layout: sidebar, mobile header and navigation
+- [x] Site layout: sidebar, mobile header and navigation
 - [ ] Home page
 - [ ] Gallery with an accessible lightbox
 - [ ] Contact modal
