@@ -4,13 +4,14 @@ import type { NavItem } from "@/data/navigation";
 type NavLinkProps = {
     item: NavItem;
     className?: string;
+    onClick?: () => void;
 };
 
-export default function NavLink({ item, className }: NavLinkProps) {
+export default function NavLink({ item, className, onClick }: NavLinkProps) {
     switch (item.kind) {
         case "page":
             return (
-                <Link href={item.href} className={className}>
+                <Link href={item.href} className={className} onClick={onClick}>
                     {item.label}
                 </Link>
             );
@@ -21,6 +22,7 @@ export default function NavLink({ item, className }: NavLinkProps) {
                     target="_blank"
                     rel="noopener noreferrer"
                     className={className}
+                    onClick={onClick}
                 >
                     {item.label}
                     <span className="sr-only"> (opens in a new tab)</span>
@@ -28,7 +30,7 @@ export default function NavLink({ item, className }: NavLinkProps) {
             );
         case "contact":
             return (
-                <button type="button" className={className}>
+                <button type="button" className={className} onClick={onClick}>
                     {item.label}
                 </button>
             );

@@ -29,6 +29,11 @@
     cursor: pointer;
   }
 
+  /* Stop the page behind an open modal dialog from scrolling */
+  html:has(dialog[open]) {
+    overflow: hidden;
+  }
+
   /* People who ask their device to reduce motion get instant changes instead of animations */
   @media (prefers-reduced-motion: reduce) {
     *,
