@@ -1,11 +1,12 @@
 import NavLink from "./NavLink";
 import { primaryNav, secondaryNav } from "@/data/navigation";
+import { siteCredit } from "@/data/site";
 
 const linkClasses = [
   // Layout: full-width block, so the underline spans the whole sidebar
   "relative block w-full py-1.25 text-left",
   // Typography
-  "font-serif text-[1.75rem] tracking-[1px] wide:text-[1.9rem]",
+  "font-serif text-nav tracking-[1px] wide:text-[1.9rem]",
   // Hover and keyboard focus: shift right
   "transition-[padding-left] hover:pl-2 focus-visible:pl-2",
   // Underline: an empty ::after line, 0 wide by default
@@ -43,7 +44,7 @@ export default function Sidebar() {
             </nav>
 
             <p className="mt-5 font-serif text-xs font-light text-white/60">
-                Imagined, Created, Designed by Xeno
+                {siteCredit}
             </p>
         </header>
     );

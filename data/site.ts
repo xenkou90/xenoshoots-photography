@@ -1,0 +1,1 @@
+export const siteCredit = "Imagined, Created, Designed by Xeno";

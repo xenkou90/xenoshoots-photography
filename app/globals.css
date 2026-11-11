@@ -10,6 +10,7 @@
   --color-black: #000000;
   --color-white: #ffffff;
   --color-brand: #545454;
+  --text-nav: 1.75rem;
   --breakpoint-*: initial;
   --breakpoint-md: 48rem;
   --breakpoint-wide: 87.5rem;
