@@ -1,8 +1,18 @@
 import NavLink from "./NavLink";
 import { primaryNav, secondaryNav } from "@/data/navigation";
 
-const linkClasses =
-    "block w-full text-left font-serif text-[1.75rem] wide:text-[1.9rem] tracking-[1px] py-1.25";
+const linkClasses = [
+  // Layout: full-width block, so the underline spans the whole sidebar
+  "relative block w-full py-1.25 text-left",
+  // Typography
+  "font-serif text-[1.75rem] tracking-[1px] wide:text-[1.9rem]",
+  // Hover and keyboard focus: shift right
+  "transition-[padding-left] hover:pl-2 focus-visible:pl-2",
+  // Underline: an empty ::after line, 0 wide by default
+  "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-[width]",
+  // Hover and keyboard focus: grow the underline to full width
+  "hover:after:w-full focus-visible:after:w-full",
+].join(" ");
 
 export default function Sidebar() {
     return (
