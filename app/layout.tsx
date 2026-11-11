@@ -42,8 +42,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="bg-black text-white">
-        <Sidebar />
-        {children}
+        <div className="md:flex md:h-dvh">
+          <Sidebar />
+          <main className="md:w-1/2 md:overflow-y-auto">{children}</main>
+        </div>
       </body>
     </html>
   );
