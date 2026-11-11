@@ -2,11 +2,11 @@ import NavLink from "./NavLink";
 import { primaryNav, secondaryNav } from "@/data/navigation";
 
 const linkClasses =
-    "block w-full text-left font-serif text-[1.75rem] tracking-[1px] py-1.25";
+    "block w-full text-left font-serif text-[1.75rem] wide:text-[1.9rem] tracking-[1px] py-1.25";
 
 export default function Sidebar() {
     return (
-        <header className="flex flex-col justify-between bg-brand px-12.5 py-15">
+            <header className="hidden md:flex md:w-1/2 md:overflow-y-auto flex-col justify-between bg-brand px-12.5 py-15">
             <nav aria-label="Main">
                 <ul className="flex flex-col gap-4.5">
                     {primaryNav.map((item) => (
