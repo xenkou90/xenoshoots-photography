@@ -13,6 +13,8 @@
   --breakpoint-*: initial;
   --breakpoint-md: 48rem;
   --breakpoint-wide: 87.5rem;
+  --default-transition-duration: 300ms;
+  --default-transition-timing-function: ease;
 }
 
 @layer base {
