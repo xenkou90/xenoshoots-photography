@@ -12,6 +12,7 @@
   --color-brand: #545454;
   --text-nav: 1.75rem;
   --breakpoint-*: initial;
+  --breakpoint-xs: 30rem;
   --breakpoint-md: 48rem;
   --breakpoint-wide: 87.5rem;
   --default-transition-duration: 300ms;

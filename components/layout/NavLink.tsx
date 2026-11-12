@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { NavItem } from "@/data/navigation";
+import ContactButton from "@/components/contact/ContactButton";
 
 type NavLinkProps = {
     item: NavItem;
@@ -30,9 +31,9 @@ export default function NavLink({ item, className, onClick }: NavLinkProps) {
             );
         case "contact":
             return (
-                <button type="button" className={className} onClick={onClick}>
+                <ContactButton className={className} onClick={onClick}>
                     {item.label}
-                </button>
+                </ContactButton>
             );
     }
 }

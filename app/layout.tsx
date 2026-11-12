@@ -3,6 +3,7 @@ import { Cormorant_Garamond, Inter } from "next/font/google";
 import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
+import { ContactProvider } from "@/components/contact/ContactProvider";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -43,11 +44,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="bg-black text-white">
+        <ContactProvider>
         <MobileNav />
         <div className="md:flex md:h-dvh">
           <Sidebar />
           <main className="md:w-1/2 md:overflow-y-auto">{children}</main>
         </div>
+        </ContactProvider>
       </body>
     </html>
   );
