@@ -3,6 +3,18 @@ import type { MouseEvent, Ref } from "react";
 import contactLogo from "@/assets/contact-logo.png";
 import { contactEmail } from "@/data/site";
 
+const dialogClasses = [
+  // Size, position and appearance of the white box
+  "m-auto w-[92%] max-w-125 rounded-lg bg-white p-0 text-center text-black md:w-[90%]",
+  // Box: fade and scale. Closed state, then open state, then the state it starts from when opening
+  "opacity-0 scale-95 transition-[opacity,scale,display,overlay] transition-discrete",
+  "open:opacity-100 open:scale-100",
+  "starting:open:opacity-0 starting:open:scale-95",
+  // Backdrop: fade in and out the same way
+  "backdrop:bg-black/0 backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete",
+  "open:backdrop:bg-black/85 starting:open:backdrop:bg-black/0",
+].join(" ");
+
 type ContactDialogProps = {
     ref: Ref<HTMLDialogElement>;
 };
@@ -19,7 +31,7 @@ export default function ContactDialog({ ref }: ContactDialogProps) {
             ref={ref}
             aria-label="Contact"
             onClick={handleClick}
-            className="m-auto w-[92%] max-w-125 rounded-lg bg-white p-0 text-center text-black backdrop:bg-black/85 md:w-[90%]"
+            className={dialogClasses}
         >
             <div className="relative flex flex-col items-center gap-6.25 px-5.5 py-8 xs:px-7.5 xs:py-10 md:px-15 md:py-12.5">
                 <form method="dialog">
