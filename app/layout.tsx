@@ -15,7 +15,7 @@ const inter = Inter({
   subsets: ["latin"],
   weight: ["300", "400", "600"],
   variable: "--font-inter",
-})
+});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://xenoshoots.site"),
@@ -43,12 +43,14 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="bg-black text-white">
+      <body className="flex min-h-dvh flex-col bg-black text-white">
         <ContactProvider>
         <MobileNav />
-        <div className="md:flex md:h-dvh">
+        <div className="flex flex-1 flex-col md:h-dvh md:flex-row">
           <Sidebar />
-          <main className="md:w-1/2 md:overflow-y-auto">{children}</main>
+          <main className="flex flex-1 flex-col md:w-1/2 md:overflow-y-auto">
+            {children}
+          </main>
         </div>
         </ContactProvider>
       </body>
