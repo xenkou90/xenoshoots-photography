@@ -60,7 +60,7 @@ Then open http://localhost:3000.
 - [x] Site layout: sidebar, mobile header and navigation
 - [ ] Home page
 - [ ] Gallery with an accessible lightbox
-- [ ] Contact modal
+- [x] Contact modal
 - [ ] Build-time image optimization
 - [ ] Accessibility and performance review
 - [ ] Deployment to production
