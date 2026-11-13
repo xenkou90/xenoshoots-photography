@@ -1,10 +1,10 @@
 import { mkdir, readdir, stat } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import WIDTHS from "../lib/image-widths.json" with { type: "json" };
 
 const SOURCE_DIR = "photos";
 const OUTPUT_DIR = "public/photos";
-const WIDTHS = [480, 960, 1440, 1728];
 const QUALITY = 80;
 
 async function isUpToDate(source: string, output: string): Promise<boolean> {
