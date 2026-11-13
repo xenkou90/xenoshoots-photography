@@ -17,6 +17,9 @@
 /.next/
 /out/
 
+# generated responsive images
+/public/photos/
+
 # production
 /build
 
