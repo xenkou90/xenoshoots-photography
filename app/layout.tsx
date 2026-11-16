@@ -4,6 +4,7 @@ import "./globals.css";
 import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
 import { ContactProvider } from "@/components/contact/ContactProvider";
+import { baseOpenGraph } from "@/lib/metadata";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -27,12 +28,10 @@ export const metadata: Metadata = {
     "Xeno Shoots — Creative product photography specializing in commercial visuals, brand storytelling, and high-end imagery. Based in Greece.",
   authors: [{ name: "Xeno Shoots" }],
   openGraph: {
-    siteName: "Xeno Shoots",
+    ...baseOpenGraph,
     title: "Xeno Shoots — Product Photography Portfolio",
     description:
       "Creative commercial product photography portfolio by Xeno. Explore premium visuals and brand storytelling.",
-    type: "website",
-    locale: "en_US",
   },
 };
 
