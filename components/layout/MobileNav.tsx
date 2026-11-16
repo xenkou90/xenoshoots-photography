@@ -18,7 +18,7 @@ export default function MobileNav() {
 
     return (
         <>
-            <header className="flex items-center bg-brand px-4 py-3 md:hidden">
+            <header className="sticky top-0 z-10 flex items-center bg-brand px-4 py-3 md:hidden">
                 <button
                     type="button"
                     aria-label="Open menu"
