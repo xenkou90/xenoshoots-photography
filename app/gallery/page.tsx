@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import GalleryGrid from "@/components/gallery/GalleryGrid";
+import Gallery from "@/components/gallery/Gallery";
 import { galleryPhotos } from "@/data/photos";
 import { baseOpenGraph } from "@/lib/metadata";
 
@@ -24,7 +24,7 @@ export default function GalleryPage() {
     return (
         <div className="p-5 md:px-5 md:py-7.5">
             <h1 className="sr-only">Gallery</h1>
-            <GalleryGrid photos={galleryPhotos} />
+            <Gallery photos={galleryPhotos} />
         </div>
     );
 }
