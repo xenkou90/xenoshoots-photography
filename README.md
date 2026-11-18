@@ -59,7 +59,7 @@ Then open http://localhost:3000.
 - [x] Project foundation: static export, fonts, color tokens, metadata, icons
 - [x] Site layout: sidebar, mobile header and navigation
 - [x] Home page
-- [ ] Gallery with an accessible lightbox
+- [x] Gallery with an accessible lightbox
 - [x] Contact modal
 - [x] Build-time image optimization
 - [ ] Accessibility and performance review
