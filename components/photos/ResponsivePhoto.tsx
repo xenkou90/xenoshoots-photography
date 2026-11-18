@@ -40,7 +40,7 @@ export default function ResponsivePhoto({
             loading={priority ? "eager" : "lazy"}
             fetchPriority={priority ? "high" : "auto"}
             decoding="async"
-            className={className}
+            className={`text-transparent ${className ?? ""}`}
         />
     );
 }
