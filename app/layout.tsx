@@ -37,20 +37,20 @@ export const metadata: Metadata = {
 
 export const viewport: Viewport = {
   themeColor: "#545454",
-}
+};
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="flex min-h-dvh flex-col bg-black text-white md:h-dvh">
         <ContactProvider>
-        <MobileNav />
-        <div className="flex flex-1 flex-col md:min-h-0 md:flex-row">
-          <Sidebar />
-          <main className="flex flex-1 flex-col md:w-1/2 md:overflow-y-auto">
-            {children}
-          </main>
-        </div>
+          <MobileNav />
+          <div className="flex flex-1 flex-col md:min-h-0 md:flex-row">
+            <Sidebar />
+            <main className="flex flex-1 flex-col md:w-1/2 md:overflow-y-auto">
+              {children}
+            </main>
+          </div>
         </ContactProvider>
       </body>
     </html>

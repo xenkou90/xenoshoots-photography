@@ -36,11 +36,11 @@ npm run dev
 
 Then open http://localhost:3000.
 
-| Command | What it does |
-|---|---|
-| `npm run dev` | Start the development server |
-| `npm run lint` | Check the code with ESLint |
-| `npm run build` | Build the static site into `out/` |
+| Command         | What it does                         |
+| --------------- | ------------------------------------ |
+| `npm run dev`   | Start the development server         |
+| `npm run lint`  | Check the code with ESLint           |
+| `npm run build` | Build the static site into `out/`    |
 | `npx serve out` | Preview the production build locally |
 
 ## Deployment
