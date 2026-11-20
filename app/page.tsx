@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ResponsivePhoto from "@/components/photos/ResponsivePhoto";
 import { heroPhoto } from "@/data/photos";
+import { cn } from "@/lib/cn";
 
 export const metadata: Metadata = {
   alternates: {
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
   },
 };
 
-const heroImageClasses = [
+const heroImageClasses = cn(
   // Fill the link area, cropping the sides like the original site
   "absolute inset-0 size-full object-cover",
   // Zoom out: quicker, on its own curve
@@ -17,7 +18,7 @@ const heroImageClasses = [
   // Zoom in on hover or keyboard focus: slower, on a different curve
   "group-hover:scale-107 group-hover:duration-900 group-hover:ease-[cubic-bezier(0.23,1,0.32,1)]",
   "group-focus-visible:scale-107",
-].join(" ");
+);
 
 export default function Home() {
   return (

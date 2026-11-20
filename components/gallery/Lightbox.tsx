@@ -7,27 +7,29 @@ import {
 } from "react";
 import ResponsivePhoto from "@/components/photos/ResponsivePhoto";
 import type { Photo } from "@/data/photos";
+import { cn } from "@/lib/cn";
 
 const SWIPE_THRESHOLD = 50;
 
-const dialogClasses = [
+const dialogClasses = cn(
   // Full screen, nearly black
   "m-0 h-dvh max-h-none w-full max-w-none bg-black/95 p-0 text-white backdrop:bg-transparent",
   // Centre the photo, but only while open (see the note below)
   "open:flex open:items-center open:justify-center",
   // Fade in and out
   "opacity-0 transition-[opacity,display,overlay] transition-discrete open:opacity-100 starting:open:opacity-0",
-].join(" ");
+);
 
-const imageClasses = [
+const imageClasses = cn(
   // Fit the screen, keeping the photo's proportions
   "h-auto max-h-[80dvh] w-auto max-w-[95vw] md:max-h-[90dvh] md:max-w-[90vw]",
   // Each new photo fades in and grows slightly, as in the original
   "transition-[opacity,scale] starting:opacity-0 starting:scale-98",
-].join(" ");
+);
 
-const controlClasses =
-  "absolute p-3 leading-none font-light text-white transition-colors hover:text-white/80 focus-visible:text-white/80";
+const controlClasses = cn(
+  "absolute p-3 leading-none font-light text-white transition-colors hover:text-white/80 focus-visible:text-white/80",
+);
 
 type LightboxProps = {
   ref: Ref<HTMLDialogElement>;
@@ -90,7 +92,10 @@ export default function Lightbox({
       <form method="dialog">
         <button
           aria-label="Close"
-          className={`${controlClasses} top-3.75 right-5 text-[40px] md:top-7.5 md:right-12.5 md:text-[50px]`}
+          className={cn(
+            controlClasses,
+            "top-3.75 right-5 text-[40px] md:top-7.5 md:right-12.5 md:text-[50px]",
+          )}
         >
           <span aria-hidden="true">&times;</span>
         </button>
@@ -114,7 +119,10 @@ export default function Lightbox({
         type="button"
         aria-label="Previous photo"
         onClick={onPrevious}
-        className={`${controlClasses} top-1/2 left-1 -translate-y-1/2 text-6xl`}
+        className={cn(
+          controlClasses,
+          "top-1/2 left-1 -translate-y-1/2 text-6xl",
+        )}
       >
         <span aria-hidden="true">&lsaquo;</span>
       </button>
@@ -122,7 +130,10 @@ export default function Lightbox({
         type="button"
         aria-label="Next photo"
         onClick={onNext}
-        className={`${controlClasses} top-1/2 right-1 -translate-y-1/2 text-6xl`}
+        className={cn(
+          controlClasses,
+          "top-1/2 right-1 -translate-y-1/2 text-6xl",
+        )}
       >
         <span aria-hidden="true">&rsaquo;</span>
       </button>

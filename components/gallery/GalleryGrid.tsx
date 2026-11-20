@@ -1,21 +1,22 @@
 import ResponsivePhoto from "@/components/photos/ResponsivePhoto";
 import type { Photo } from "@/data/photos";
+import { cn } from "@/lib/cn";
 
-const itemClasses = [
+const itemClasses = cn(
   // Frame: full-width button that clips the zoomed photo and positions the veil
   "group relative block w-full overflow-hidden",
   // White veil: fades in on hover or keyboard focus
   "after:pointer-events-none after:absolute after:inset-0 after:bg-white/0 after:transition-colors",
   "group-hover:after:bg-white/10 group-focus-visible:after:bg-white/10",
-].join(" ");
+);
 
-const imageClasses = [
+const imageClasses = cn(
   // Always a 4:5 cell, filled completely
   "aspect-4/5 w-full object-cover",
   // Two properties, two speeds, as in the original CSS
   "[transition:scale_0.5s_ease,filter_0.3s_ease]",
   "group-hover:scale-103 group-focus-visible:brightness-105",
-].join(" ");
+);
 
 type GalleryGridProps = {
   photos: Photo[];

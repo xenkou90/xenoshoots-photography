@@ -1,8 +1,9 @@
 import NavLink from "./NavLink";
 import { primaryNav, secondaryNav } from "@/data/navigation";
 import { siteCredit } from "@/data/site";
+import { cn } from "@/lib/cn";
 
-const linkClasses = [
+const linkClasses = cn(
   // Layout: full-width block, so the underline spans the whole sidebar
   "relative block w-full py-1.25 text-left",
   // Typography
@@ -13,7 +14,7 @@ const linkClasses = [
   "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-[width]",
   // Hover and keyboard focus: grow the underline to full width
   "hover:after:w-full focus-visible:after:w-full",
-].join(" ");
+);
 
 export default function Sidebar() {
   return (

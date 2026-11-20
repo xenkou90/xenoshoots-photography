@@ -1,5 +1,6 @@
 import IMAGE_WIDTHS from "@/lib/image-widths.json";
 import type { Photo } from "@/data/photos";
+import { cn } from "@/lib/cn";
 
 const PHOTO_WIDTH = 1728;
 const PHOTO_HEIGHT = 2160;
@@ -40,7 +41,7 @@ export default function ResponsivePhoto({
       loading={priority ? "eager" : "lazy"}
       fetchPriority={priority ? "high" : "auto"}
       decoding="async"
-      className={`text-transparent ${className ?? ""}`}
+      className={cn("text-transparent", className)}
     />
   );
 }
