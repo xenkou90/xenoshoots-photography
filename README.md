@@ -1,5 +1,7 @@
 # Xeno Shoots — Photography Portfolio
 
+[![CI](https://github.com/xenkou90/xenoshoots-photography/actions/workflows/ci.yml/badge.svg)](https://github.com/xenkou90/xenoshoots-photography/actions/workflows/ci.yml)
+
 Portfolio website for Xeno Shoots, a product photographer based in Greece. This is a ground-up rebuild of the current site at [xenoshoots.site](https://xenoshoots.site), moving from vanilla HTML, CSS and JavaScript to **Next.js, React, TypeScript and Tailwind CSS**.
 
 > **Status:** in progress. The live site still runs the original version ([source](https://github.com/xenkou90/xenoshoots-portfolio)) until this rebuild is complete.
@@ -50,6 +52,7 @@ Then open http://localhost:3000.
 ## Workflow
 
 - `main` is protected and always deployable. All work happens on feature branches.
+- Every pull request is checked by GitHub Actions: formatting, linting, type checking and a production build. A pull request can't be merged unless all checks pass.
 - Commits follow [Conventional Commits](https://www.conventionalcommits.org).
 - Pull requests are merged with rebase merging, so every individual commit stays visible in a linear history.
 - Milestones are tagged, starting with `v0.1-foundation`.
