@@ -11,7 +11,7 @@ const linkClasses = cn(
   // Hover and keyboard focus: shift right
   "transition-[padding-left] hover:pl-2 focus-visible:pl-2",
   // Underline: an empty ::after line, 0 wide by default
-  "after:absolute after:left-0 after:-bottom-1 after:h-0.5 after:w-0 after:bg-white after:transition-[width]",
+  "after:absolute after:-bottom-1 after:left-0 after:h-0.5 after:w-0 after:bg-white after:transition-[width]",
   // Hover and keyboard focus: grow the underline to full width
   "hover:after:w-full focus-visible:after:w-full",
 );

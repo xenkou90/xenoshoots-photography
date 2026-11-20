@@ -24,7 +24,7 @@ const imageClasses = cn(
   // Fit the screen, keeping the photo's proportions
   "h-auto max-h-[80dvh] w-auto max-w-[95vw] md:max-h-[90dvh] md:max-w-[90vw]",
   // Each new photo fades in and grows slightly, as in the original
-  "transition-[opacity,scale] starting:opacity-0 starting:scale-98",
+  "transition-[opacity,scale] starting:scale-98 starting:opacity-0",
 );
 
 const controlClasses = cn(
