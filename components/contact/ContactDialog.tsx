@@ -2,8 +2,9 @@ import Image from "next/image";
 import type { MouseEvent, Ref } from "react";
 import contactLogo from "@/assets/contact-logo.png";
 import { contactEmail } from "@/data/site";
+import { cn } from "@/lib/cn";
 
-const dialogClasses = [
+const dialogClasses = cn(
   // Size, position and appearance of the white box
   "m-auto w-[92%] max-w-125 rounded-lg bg-white p-0 text-center text-black md:w-[90%]",
   // Box: fade and scale. Closed state, then open state, then the state it starts from when opening
@@ -13,7 +14,7 @@ const dialogClasses = [
   // Backdrop: fade in and out the same way
   "backdrop:bg-black/0 backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete",
   "open:backdrop:bg-black/85 starting:open:backdrop:bg-black/0",
-].join(" ");
+);
 
 type ContactDialogProps = {
   ref: Ref<HTMLDialogElement>;

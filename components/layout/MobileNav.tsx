@@ -4,11 +4,13 @@ import { useRef } from "react";
 import NavLink from "./NavLink";
 import { primaryNav, secondaryNav } from "@/data/navigation";
 import { siteCredit } from "@/data/site";
+import { cn } from "@/lib/cn";
 
 const navItems = [...primaryNav, ...secondaryNav];
 
-const linkClasses =
-  "font-serif text-nav tracking-[1px] transition-[letter-spacing] hover:tracking-[3px] focus-visible:tracking-[3px]";
+const linkClasses = cn(
+  "font-serif text-nav tracking-[1px] transition-[letter-spacing] hover:tracking-[3px] focus-visible:tracking-[3px]",
+);
 
 export default function MobileNav() {
   const dialogRef = useRef<HTMLDialogElement>(null);
