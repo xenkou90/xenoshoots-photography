@@ -8,9 +8,9 @@ const dialogClasses = cn(
   // Size, position and appearance of the white box
   "m-auto w-[92%] max-w-125 rounded-lg bg-white p-0 text-center text-black md:w-[90%]",
   // Box: fade and scale. Closed state, then open state, then the state it starts from when opening
-  "opacity-0 scale-95 transition-[opacity,scale,display,overlay] transition-discrete",
-  "open:opacity-100 open:scale-100",
-  "starting:open:opacity-0 starting:open:scale-95",
+  "scale-95 opacity-0 transition-[opacity,scale,display,overlay] transition-discrete",
+  "open:scale-100 open:opacity-100",
+  "starting:open:scale-95 starting:open:opacity-0",
   // Backdrop: fade in and out the same way
   "backdrop:bg-black/0 backdrop:transition-[background-color,display,overlay] backdrop:transition-discrete",
   "open:backdrop:bg-black/85 starting:open:backdrop:bg-black/0",
