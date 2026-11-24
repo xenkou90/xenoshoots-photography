@@ -24,7 +24,10 @@ The goal is the same visual identity, with a component-based, typed and accessib
 - React 19 and TypeScript (strict mode)
 - Tailwind CSS 4 with a restricted, custom color palette
 - Self-hosted fonts via `next/font` (Cormorant Garamond and Inter)
-- ESLint
+- Responsive WebP images generated at build time with `sharp`
+- ESLint (including Tailwind class checks) and Prettier
+- [Playwright](https://playwright.dev) end-to-end tests in Chromium and WebKit, with [axe](https://github.com/dequelabs/axe-core) accessibility scans
+- GitHub Actions CI
 
 ## Getting started
 
@@ -38,12 +41,15 @@ npm run dev
 
 Then open http://localhost:3000.
 
-| Command         | What it does                         |
-| --------------- | ------------------------------------ |
-| `npm run dev`   | Start the development server         |
-| `npm run lint`  | Check the code with ESLint           |
-| `npm run build` | Build the static site into `out/`    |
-| `npx serve out` | Preview the production build locally |
+| Command             | What it does                                                            |
+| ------------------- | ----------------------------------------------------------------------- |
+| `npm run dev`       | Start the development server                                            |
+| `npm run format`    | Format all files with Prettier                                          |
+| `npm run lint`      | Check the code with ESLint                                              |
+| `npm run typecheck` | Check types with TypeScript                                             |
+| `npm run build`     | Build the static site into `out/`                                       |
+| `npm run test:e2e`  | Run the end-to-end and accessibility tests against `out/` (build first) |
+| `npx serve out`     | Preview the production build locally                                    |
 
 ## Deployment
 
@@ -52,7 +58,7 @@ Then open http://localhost:3000.
 ## Workflow
 
 - `main` is protected and always deployable. All work happens on feature branches.
-- Every pull request is checked by GitHub Actions: formatting, linting, type checking and a production build. A pull request can't be merged unless all checks pass.
+- Every pull request is checked by GitHub Actions: formatting, linting, type checking, a production build, and end-to-end and accessibility tests at desktop and mobile sizes. A pull request can't be merged unless all checks pass.
 - Commits follow [Conventional Commits](https://www.conventionalcommits.org).
 - Pull requests are merged with rebase merging, so every individual commit stays visible in a linear history.
 - Milestones are tagged, starting with `v0.1-foundation`.
