@@ -1,25 +1,6 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { contactEmail } from "@/data/site";
-
-async function openContact(page: Page, isMobile: boolean) {
-  await page.goto("/");
-
-  if (isMobile) {
-    await page.getByRole("button", { name: "Open menu" }).click();
-    const menu = page.getByRole("dialog", { name: "Menu" });
-    await menu.getByRole("button", { name: "Contact" }).click();
-    await expect(menu).toBeHidden();
-  } else {
-    await page
-      .getByRole("navigation", { name: "Social and contact" })
-      .getByRole("button", { name: "Contact" })
-      .click();
-  }
-
-  const contact = page.getByRole("dialog", { name: "Contact" });
-  await expect(contact).toBeVisible();
-  return contact;
-}
+import { openContact } from "./helpers";
 
 test("contact modal shows the email link", async ({ page, isMobile }) => {
   const contact = await openContact(page, isMobile);

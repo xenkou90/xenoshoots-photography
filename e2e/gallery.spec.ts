@@ -1,18 +1,8 @@
-import { expect, test, type Page } from "@playwright/test";
+import { expect, test } from "@playwright/test";
 import { galleryPhotos } from "@/data/photos";
+import { getLightbox, openGalleryPage } from "./helpers";
 
 const photoCount = galleryPhotos.length;
-
-async function openGalleryPage(page: Page) {
-  await page.goto("/gallery");
-  const photos = page.getByRole("button", { name: /^View larger:/ });
-  await expect(photos).toHaveCount(photoCount);
-  return photos;
-}
-
-function getLightbox(page: Page) {
-  return page.getByRole("dialog", { name: "Photo viewer" });
-}
 
 test("gallery shows every photo", async ({ page }) => {
   await openGalleryPage(page);
