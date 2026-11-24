@@ -44,7 +44,7 @@ export default function Sidebar() {
         </ul>
       </nav>
 
-      <p className="mt-5 font-serif text-xs font-light text-white/60">
+      <p className="mt-5 font-serif text-xs font-light text-white/70">
         {siteCredit}
       </p>
     </header>
