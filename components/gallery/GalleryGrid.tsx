@@ -16,6 +16,7 @@ const imageClasses = cn(
   // Two properties, two speeds, as in the original CSS
   "[transition:scale_0.5s_ease,filter_0.3s_ease]",
   "group-hover:scale-103 group-focus-visible:brightness-105",
+  "group-focus-visible:scale-103 group-focus-visible:brightness-105",
 );
 
 type GalleryGridProps = {
@@ -25,7 +26,7 @@ type GalleryGridProps = {
 
 export default function GalleryGrid({ photos, onOpen }: GalleryGridProps) {
   return (
-    <ul className="grid grid-cols-2 gap-2.5 md:gap-2.5 wide:grid-cols-3 wide:gap-5">
+    <ul className="grid grid-cols-2 gap-2.5 md:gap-3.75 wide:grid-cols-3 wide:gap-5">
       {photos.map((photo, index) => (
         <li key={photo.name}>
           <button
