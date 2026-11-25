@@ -121,7 +121,7 @@ export default function Lightbox({
         onClick={onPrevious}
         className={cn(
           controlClasses,
-          "top-1/2 left-1 -translate-y-1/2 text-6xl",
+          "top-1/2 left-2 -translate-y-1/2 text-6xl",
         )}
       >
         <span aria-hidden="true">&lsaquo;</span>
@@ -132,7 +132,7 @@ export default function Lightbox({
         onClick={onNext}
         className={cn(
           controlClasses,
-          "top-1/2 right-1 -translate-y-1/2 text-6xl",
+          "top-1/2 right-2 -translate-y-1/2 text-6xl",
         )}
       >
         <span aria-hidden="true">&rsaquo;</span>

@@ -6,7 +6,7 @@ import { cn } from "@/lib/cn";
 
 const dialogClasses = cn(
   // Size, position and appearance of the cream box
-  "m-auto w-[92%] max-w-125 rounded-lg bg-cream p-0 text-center text-black md:w-[90%]",
+  "m-auto w-[92%] max-w-125 rounded-lg bg-cream p-0 text-center text-black [--focus-ring-color:var(--color-black)] md:w-[90%]",
   // Box: fade and scale. Closed state, then open state, then the state it starts from when opening
   "scale-95 opacity-0 transition-[opacity,scale,display,overlay] transition-discrete",
   "open:scale-100 open:opacity-100",

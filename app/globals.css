@@ -35,6 +35,12 @@
     overflow: hidden;
   }
 
+  /* One focus ring for keyboard users, in cream unless an area overrides the colour */
+  :focus-visible {
+    outline: 2px solid var(--focus-ring-color, var(--color-cream));
+    outline-offset: 4px;
+  }
+
   /* People who ask their device to reduce motion get instant changes instead of animations */
   @media (prefers-reduced-motion: reduce) {
     *,

@@ -24,7 +24,10 @@ export default function Home() {
   return (
     <>
       <h1 className="sr-only">Xeno Shoots — product photography</h1>
-      <Link href="/gallery" className="group relative flex-1 overflow-hidden">
+      <Link
+        href="/gallery"
+        className="group relative flex-1 overflow-hidden focus-visible:-outline-offset-8"
+      >
         <span className="sr-only">View the gallery: </span>
         <ResponsivePhoto
           photo={heroPhoto}
