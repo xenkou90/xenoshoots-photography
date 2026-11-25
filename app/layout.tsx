@@ -44,11 +44,21 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="flex min-h-dvh flex-col bg-black text-cream md:h-dvh">
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cream focus:px-4 focus:py-2 focus:text-black"
+        >
+          Skip to content
+        </a>
         <ContactProvider>
           <MobileNav />
           <div className="flex flex-1 flex-col md:min-h-0 md:flex-row">
             <Sidebar />
-            <main className="flex flex-1 flex-col md:w-1/2 md:overflow-y-auto">
+            <main
+              id="main"
+              tabIndex={-1}
+              className="flex flex-1 flex-col md:w-1/2 md:overflow-y-auto"
+            >
               {children}
             </main>
           </div>
