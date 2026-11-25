@@ -5,8 +5,8 @@ import { contactEmail } from "@/data/site";
 import { cn } from "@/lib/cn";
 
 const dialogClasses = cn(
-  // Size, position and appearance of the white box
-  "m-auto w-[92%] max-w-125 rounded-lg bg-white p-0 text-center text-black md:w-[90%]",
+  // Size, position and appearance of the cream box
+  "m-auto w-[92%] max-w-125 rounded-lg bg-cream p-0 text-center text-black md:w-[90%]",
   // Box: fade and scale. Closed state, then open state, then the state it starts from when opening
   "scale-95 opacity-0 transition-[opacity,scale,display,overlay] transition-discrete",
   "open:scale-100 open:opacity-100",
@@ -64,7 +64,7 @@ export default function ContactDialog({ ref }: ContactDialogProps) {
           </p>
           <a
             href={`mailto:${contactEmail}`}
-            className="inline-block border-2 border-black bg-black px-8 py-3 font-serif text-[0.8rem] font-semibold tracking-[2px] text-white uppercase transition-colors hover:bg-white hover:text-black focus-visible:bg-white focus-visible:text-black md:px-10 md:py-3.75 md:text-[0.9rem]"
+            className="inline-block border-2 border-black bg-black px-8 py-3 font-serif text-[0.8rem] font-semibold tracking-[2px] text-cream uppercase transition-colors hover:bg-cream hover:text-black focus-visible:bg-cream focus-visible:text-black md:px-10 md:py-3.75 md:text-[0.9rem]"
           >
             Send me an email
           </a>
