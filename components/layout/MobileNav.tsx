@@ -12,6 +12,14 @@ const linkClasses = cn(
   "font-serif text-nav tracking-[1px] transition-[letter-spacing] hover:tracking-[3px] focus-visible:tracking-[3px]",
 );
 
+const dialogClasses = cn(
+  // Full screen, in the brand grey
+  "m-0 h-dvh max-h-none w-full max-w-none bg-brand p-0 text-cream backdrop:bg-transparent",
+  // Fade in and out: closed state, open state, and the state it starts from when opening
+  "opacity-0 transition-[opacity,display,overlay] transition-discrete",
+  "open:opacity-100 starting:open:opacity-0",
+);
+
 export default function MobileNav() {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
@@ -37,11 +45,7 @@ export default function MobileNav() {
         </p>
       </header>
 
-      <dialog
-        ref={dialogRef}
-        aria-label="Menu"
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-brand p-0 text-cream"
-      >
+      <dialog ref={dialogRef} aria-label="Menu" className={dialogClasses}>
         <button
           type="button"
           aria-label="Close menu"
