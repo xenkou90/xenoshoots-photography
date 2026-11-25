@@ -26,7 +26,7 @@ export default function MobileNav() {
           aria-label="Open menu"
           aria-haspopup="dialog"
           onClick={openMenu}
-          className="-m-2 flex flex-col gap-1.25 p-3"
+          className="-m-2 flex flex-col gap-1.25 p-3 focus-visible:outline-offset-0"
         >
           <span className="block h-0.75 w-6 bg-cream" />
           <span className="block h-0.75 w-6 bg-cream" />
