@@ -11,7 +11,10 @@ async function expectNoViolations(page: Page) {
     rule: violation.id,
     impact: violation.impact,
     problem: violation.help,
-    elements: violation.nodes.map((node) => node.target.join(" ")),
+    elements: violation.nodes.map((node) => ({
+      element: node.target.join(" "),
+      details: node.failureSummary,
+    })),
   }));
 
   expect(violations).toEqual([]);
@@ -36,7 +39,10 @@ test("open lightbox has no detectable accessibility violations", async ({
 }) => {
   const photos = await openGalleryPage(page);
   await photos.first().click();
-  await expect(getLightbox(page)).toBeVisible();
+
+  const lightbox = getLightbox(page);
+  await expect(lightbox).toBeVisible();
+  await expect(lightbox).toHaveCSS("opacity", "1");
   await expectNoViolations(page);
 });
 
@@ -44,6 +50,7 @@ test("open contact modal has no detectable accessibility violations", async ({
   page,
   isMobile,
 }) => {
-  await openContact(page, isMobile);
+  const contact = await openContact(page, isMobile);
+  await expect(contact).toHaveCSS("opacity", "1");
   await expectNoViolations(page);
 });
