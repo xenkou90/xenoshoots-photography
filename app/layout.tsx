@@ -43,7 +43,7 @@ export const viewport: Viewport = {
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
-      <body className="flex min-h-dvh flex-col bg-black text-white md:h-dvh">
+      <body className="flex min-h-dvh flex-col bg-black text-cream md:h-dvh">
         <ContactProvider>
           <MobileNav />
           <div className="flex flex-1 flex-col md:min-h-0 md:flex-row">

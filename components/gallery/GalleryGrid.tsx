@@ -5,9 +5,9 @@ import { cn } from "@/lib/cn";
 const itemClasses = cn(
   // Frame: full-width button that clips the zoomed photo and positions the veil
   "group relative block w-full overflow-hidden",
-  // White veil: fades in on hover or keyboard focus
-  "after:pointer-events-none after:absolute after:inset-0 after:bg-white/0 after:transition-colors",
-  "group-hover:after:bg-white/10 group-focus-visible:after:bg-white/10",
+  // Cream veil: fades in on hover or keyboard focus
+  "after:pointer-events-none after:absolute after:inset-0 after:bg-cream/0 after:transition-colors",
+  "group-hover:after:bg-cream/10 group-focus-visible:after:bg-cream/10",
 );
 
 const imageClasses = cn(

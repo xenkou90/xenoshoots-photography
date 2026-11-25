@@ -28,11 +28,11 @@ export default function MobileNav() {
           onClick={openMenu}
           className="-m-2 flex flex-col gap-1.25 p-3"
         >
-          <span className="block h-0.75 w-6 bg-white" />
-          <span className="block h-0.75 w-6 bg-white" />
-          <span className="block h-0.75 w-6 bg-white" />
+          <span className="block h-0.75 w-6 bg-cream" />
+          <span className="block h-0.75 w-6 bg-cream" />
+          <span className="block h-0.75 w-6 bg-cream" />
         </button>
-        <p className="ml-auto text-right font-serif text-[0.65rem] text-white/70">
+        <p className="ml-auto text-right font-serif text-[0.65rem] text-cream/80">
           {siteCredit}
         </p>
       </header>
@@ -40,7 +40,7 @@ export default function MobileNav() {
       <dialog
         ref={dialogRef}
         aria-label="Menu"
-        className="m-0 h-dvh max-h-none w-full max-w-none bg-brand p-0 text-white"
+        className="m-0 h-dvh max-h-none w-full max-w-none bg-brand p-0 text-cream"
       >
         <button
           type="button"

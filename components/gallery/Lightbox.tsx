@@ -13,7 +13,7 @@ const SWIPE_THRESHOLD = 50;
 
 const dialogClasses = cn(
   // Full screen, nearly black
-  "m-0 h-dvh max-h-none w-full max-w-none bg-black/95 p-0 text-white backdrop:bg-transparent",
+  "m-0 h-dvh max-h-none w-full max-w-none bg-black/95 p-0 text-cream backdrop:bg-transparent",
   // Centre the photo, but only while open (see the note below)
   "open:flex open:items-center open:justify-center",
   // Fade in and out
@@ -28,7 +28,7 @@ const imageClasses = cn(
 );
 
 const controlClasses = cn(
-  "absolute p-3 leading-none font-light text-white transition-colors hover:text-white/80 focus-visible:text-white/80",
+  "absolute p-3 leading-none font-light text-cream transition-colors hover:text-cream/80 focus-visible:text-cream/80",
 );
 
 type LightboxProps = {
