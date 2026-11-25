@@ -46,3 +46,30 @@ test("mobile menu opens, navigates, and closes", async ({ page, isMobile }) => {
   await expect(page).toHaveURL(/\/gallery$/);
   await expect(menu).toBeHidden();
 });
+
+test("skip link moves keyboard focus past the navigation", async ({
+  page,
+  browserName,
+}) => {
+  await page.goto("/gallery");
+  const skipLink = page.getByRole("link", { name: "Skip to content" });
+
+  if (browserName === "webkit") {
+    // Safari's Tab key skips links by default (it needs Option+Tab),
+    // so focus the skip link directly instead of tabbing to it
+    await skipLink.focus();
+  } else {
+    await page.keyboard.press("Tab");
+  }
+
+  await expect(skipLink).toBeFocused();
+  await expect(skipLink).toHaveCSS("position", "fixed");
+
+  await page.keyboard.press("Enter");
+  await expect(page.locator("main")).toBeFocused();
+
+  await page.keyboard.press("Tab");
+  await expect(
+    page.getByRole("button", { name: /^View larger:/ }).first(),
+  ).toBeFocused();
+});
