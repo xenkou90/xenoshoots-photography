@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
+import { siteName } from "@/data/site";
 
 export const baseOpenGraph = {
-  siteName: "Xeno Shoots",
+  siteName,
   type: "website",
   locale: "en_US",
   images: [
