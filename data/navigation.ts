@@ -18,3 +18,7 @@ export const secondaryNav: NavItem[] = [
   },
   { kind: "contact", label: "Contact" },
 ];
+
+export const pagePaths = [...primaryNav, ...secondaryNav]
+  .filter((item) => item.kind === "page")
+  .map((item) => item.href);
