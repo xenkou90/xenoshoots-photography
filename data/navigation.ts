@@ -1,3 +1,5 @@
+import { instagramUrl } from "@/data/site";
+
 type InternalPath = "/" | "/gallery";
 
 export type NavItem =
@@ -14,7 +16,7 @@ export const secondaryNav: NavItem[] = [
   {
     kind: "external",
     label: "Instagram",
-    href: "https://instagram.com/xeno.shoots",
+    href: instagramUrl,
   },
   { kind: "contact", label: "Contact" },
 ];
