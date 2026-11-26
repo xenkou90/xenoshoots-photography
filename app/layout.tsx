@@ -6,6 +6,7 @@ import MobileNav from "@/components/layout/MobileNav";
 import { ContactProvider } from "@/components/contact/ContactProvider";
 import { baseOpenGraph } from "@/lib/metadata";
 import { siteUrl } from "@/data/site";
+import { structuredData, toJsonLd } from "@/lib/structured-data";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -45,6 +46,10 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
     <html lang="en" className={`${cormorant.variable} ${inter.variable}`}>
       <body className="flex min-h-dvh flex-col bg-black text-cream md:h-dvh">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: toJsonLd(structuredData) }}
+        />
         <a
           href="#main"
           className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-50 focus:bg-cream focus:px-4 focus:py-2 focus:text-black"
