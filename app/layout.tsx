@@ -5,6 +5,7 @@ import Sidebar from "@/components/layout/Sidebar";
 import MobileNav from "@/components/layout/MobileNav";
 import { ContactProvider } from "@/components/contact/ContactProvider";
 import { baseOpenGraph } from "@/lib/metadata";
+import { siteUrl } from "@/data/site";
 
 const cormorant = Cormorant_Garamond({
   subsets: ["latin"],
@@ -19,7 +20,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  metadataBase: new URL("https://xenoshoots.site"),
+  metadataBase: new URL(siteUrl),
   title: {
     default: "Xeno Shoots — Product Photography Portfolio",
     template: "%s — Xeno Shoots",
